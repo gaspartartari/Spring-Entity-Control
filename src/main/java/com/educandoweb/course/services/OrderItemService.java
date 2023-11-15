@@ -7,23 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.educandoweb.course.entities.Category;
-import com.educandoweb.course.repositories.CategoryRepositoy;
+import com.educandoweb.course.entities.OrderItem;
+import com.educandoweb.course.repositories.OrderItemRepository;
 
 @Service
-public class CategoryService {
+public class OrderItemService {
     
     @Autowired
-    private CategoryRepositoy repository;
+    private OrderItemRepository repository;
 
     @Transactional(readOnly = true)
-    public List<Category> findAll(){
+    public List<OrderItem> findAll(){
         return repository.findAll();
     }
-    
+
     @Transactional(readOnly = true)
-    public Category findById (Long id){
-        Optional<Category> obj = repository.findById(id);
+    public OrderItem findById (Long id){
+        Optional<OrderItem> obj = repository.findById(id);
         return obj.get();
     }
 }
