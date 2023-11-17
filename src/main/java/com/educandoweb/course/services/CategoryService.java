@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.repositories.CategoryRepositoy;
+import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class CategoryService {
@@ -24,6 +25,6 @@ public class CategoryService {
     @Transactional(readOnly = true)
     public Category findById (Long id){
         Optional<Category> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }

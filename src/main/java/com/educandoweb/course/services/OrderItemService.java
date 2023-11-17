@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.educandoweb.course.entities.OrderItem;
 import com.educandoweb.course.repositories.OrderItemRepository;
+import com.educandoweb.course.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class OrderItemService {
@@ -24,6 +25,6 @@ public class OrderItemService {
     @Transactional(readOnly = true)
     public OrderItem findById (Long id){
         Optional<OrderItem> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 }
