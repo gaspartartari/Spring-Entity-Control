@@ -2,12 +2,24 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/gaspartartari/project-springboot3-jpa/blob/main/LICENSE)
 
 ## Overview
-https://app-course-f8ed8935eb48.herokuapp.com/
 
 SpringBoot-Course is a back-end web application developed for educational purposes. This project serves as a comprehensive example of building a Spring application with various functionalities.
 
 ## Project Description
 The application manages entities such as users, categories, products, orders, and order items. It provides a set of RESTful APIs to perform CRUD operations on these entities. A Layered Archiquecture is implementend.
+
+## API Example End-Points
+
+https://app-course-f8ed8935eb48.herokuapp.com/users
+
+https://app-course-f8ed8935eb48.herokuapp.com/users/2
+
+https://app-course-f8ed8935eb48.herokuapp.com/orders
+
+https://app-course-f8ed8935eb48.herokuapp.com/products
+
+https://app-course-f8ed8935eb48.herokuapp.com/orders/3
+
 
 ## Features
 - **User Management:** Allows the creation, retrieval, update, and deletion of user records.
